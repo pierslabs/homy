@@ -1,0 +1,13 @@
+services:
+  homi-api:
+    image: homi:latest
+    build:
+      context: .
+      dockerfile: apps/api/dockerfile
+    container_name: homi-api
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - '3001:3001'
+    environment:
+      - PORT=3001
