@@ -11,3 +11,16 @@ services:
       - '3001:3001'
     environment:
       - PORT=3001
+
+  postgres-homi-db:
+    image: postgres:14.3
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=homi
+    container_name: postgres-homi-db
+    volumes:
+      - .:/var/lib.postgresql/data
